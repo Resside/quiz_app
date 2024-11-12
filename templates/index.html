@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <h1>Случайный вопрос</h1>
+    
+    <div id="quiz">
+        <p id="question">Нажмите кнопку для получения случайного вопроса</p>
+        <button onclick="getRandomQuestion()">Получить вопрос</button>
+        <button onclick="showAnswer()" id="show-answer-btn" style="display:none;">Показать ответ</button>
+        <p id="answer" style="display:none;"></p>
+    </div>
+
+    <!-- Кнопка для открытия формы добавления вопроса -->
+    <button onclick="toggleAddQuestionForm()">Добавить новый вопрос</button>
+
+    <!-- Форма для добавления нового вопроса -->
+    <div id="add-question-form" style="display: none;">
+        <h2>Добавить новый вопрос</h2>
+        <label for="new-question">Вопрос:</label>
+        <input type="text" id="new-question" required>
+        <label for="new-answer">Ответ:</label>
+        <input type="text" id="new-answer" required>
+        <button onclick="addQuestion()">Сохранить вопрос</button>
+    </div>
+</body>
+
+
+
+</html>

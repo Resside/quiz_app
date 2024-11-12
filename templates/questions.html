@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вопросы и ответы</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <h1>Добавить новый вопрос</h1>
+    <form method="post">
+        <label for="question">Вопрос:</label>
+        <input type="text" id="question" name="question" required>
+        <label for="answer">Ответ:</label>
+        <input type="text" id="answer" name="answer" required>
+        <button type="submit">Добавить</button>
+    </form>
+
+    <h2>Случайный вопрос</h2>
+    <button onclick="getRandomQuestion()">Показать случайный вопрос</button>
+    
+    <div id="questionContainer" style="display:none;">
+        <p><strong>Вопрос:</strong> <span id="randomQuestion"></span></p>
+        <button onclick="showAnswer()">Показать ответ</button>
+        <p id="answerContainer" style="display:none;"><strong>Ответ:</strong> <span id="randomAnswer"></span></p>
+        <button onclick="deleteCurrentQuestion()">Удалить вопрос</button>
+    </div>
+</body>
+</html>
